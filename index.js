@@ -29,9 +29,10 @@ app.use('/books',booksRoute);
 mongoose.connect(mongoDBURL)
 .then(()=>{
     console.log("connected to database successfully")
-    app.listen(PORT,()=>{
-        console.log(`Server is running on port ${PORT}`)
-    })
+    app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on http://0.0.0.0:${port}`);
+});
+
 })
 .catch((error)=>{
     console.log(error);
